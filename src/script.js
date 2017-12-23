@@ -3,6 +3,7 @@
         .controller("principal", ["$scope", principal]);
 
     function principal($scope){
+        $scope.listaProductos = [];
         var carInsurance = new CarInsurance([
             new Product("Medium Coverage", 15, 20),
             new Product("Full Coverage", 2, 0),
@@ -17,7 +18,8 @@
         console.log("Hello");
 
         for(var i = 0; i<30; i++){
-            console.log(mediumCoverage);
+            console.log($scope.listaProductos);
+            $scope.listaProductos.push({"day": i, "products": angular.copy(carInsurance.products)});
             carInsurance.updatePrice();
         }
     }

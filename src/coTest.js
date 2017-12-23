@@ -12,21 +12,18 @@ class CarInsurance {
   }
   updatePrice() {
     for (var i = 0; i < this.products.length; i++) {
+      this.products[i].sellIn--;
       if(this.products[i].name === 'Full Coverage'){
-        this.products[i].sellIn--;
         this.products[i].price = this.products[i].price + (this.products[i].sellIn < 1 ? 2:1);
       }else if(this.products[i].name === 'Special Full Coverage'){
-        this.products[i].sellIn--;
         if(this.products[i].sellIn <= 0){
           this.products[i].price = 0;
         }else{
           this.products[i].price = this.products[i].price + (this.products[i].sellIn < 11 ? (this.products[i].sellIn < 6 ? 3:2):1);
         }
       }else if(this.products[i].name === "Super Sale"){
-        this.products[i].sellIn--;
         this.products[i].price = this.products[i].price - (this.products[i].sellIn < 1 ? 4:2);
       }else if(this.products[i].name !== "Mega Coverage"){
-        this.products[i].sellIn--;
         this.products[i].price = this.products[i].price - (this.products[i].sellIn < 1 ? 2:1);
       }
       if(this.products[i].name !== "Mega Coverage"){

@@ -6,7 +6,21 @@
     </head>
     <body ng-app="testComparaOnline">
         <div ng-controller="principal">
-            {{helloWorld}}
+            <div ng-repeat="dia in listaProductos">
+               <h4>Día: {{dia.day}}</h4> 
+               <table>
+                   <tr>
+                       <th></th>
+                       <th>Sell In</th>
+                       <th>Price</th>
+                   </tr>
+                   <tr ng-repeat="producto in dia.products">
+                       <td>{{producto.name}}</td>
+                       <td>{{producto.sellIn}}</td>
+                       <td>{{producto.price}}</td>
+                   </tr>
+               </table>
+            </div>
         </div>
     </body>
 </html>
