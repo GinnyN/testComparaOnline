@@ -15,10 +15,8 @@
             new Product("Special Full Coverage", 5, 49),
             new Product("Super Sale", 2, 6)
         ]);
-        console.log("Hello");
 
         for(var i = 0; i<30; i++){
-            console.log($scope.listaProductos);
             $scope.listaProductos.push({"day": i, "products": angular.copy(carInsurance.products)});
             carInsurance.updatePrice();
         }
